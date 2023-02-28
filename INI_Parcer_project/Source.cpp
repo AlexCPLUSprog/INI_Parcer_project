@@ -7,13 +7,12 @@ int main(int args, char** argv) {
 	bool isOpen = false;
 	std::shared_ptr<INI_Parcer> ini = std::make_shared<INI_Parcer>();
 	// Пришлось добавить try catch для обработки исключения в случае, когда файла не существует
-	while (!isOpen) {
-
-	
+	while (!isOpen) {	
 	try {
 		if (args > 1) {
 			Parcer_funcs mainProgramm(argv[1]);
 			mainProgramm.start_work(ini);
+			isOpen = true;
 		}
 		else {
 			std::cout << "Введите название файла: ";
