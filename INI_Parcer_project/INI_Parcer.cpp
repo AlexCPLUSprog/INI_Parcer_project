@@ -44,8 +44,7 @@ void INI_Parcer::reader(const std::string& fileName) {
 		in.close();
 	}
 	else
-		throw "Такого файла нет!";
-	
+		throw "Такого файла нет!";	
 }
 
 const std::string INI_Parcer::search_key_in_header(const std::string& key) {
@@ -58,8 +57,8 @@ const std::string INI_Parcer::search_key_in_header(const std::string& key) {
 }
 
 bool INI_Parcer::search_header(const std::string& header) const {
-	for (auto [header, value] : _section) {
-		if (header == header)
+	for (auto [head, value] : _section) {
+		if (head == header)
 			return true;
 	}
 	return false;
